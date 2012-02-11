@@ -63,6 +63,11 @@ change_text (file1, 'libreoffice-writer.desktop', 'abiword.desktop')
 change_text (file1, 'Calc', 'Gnumeric')
 change_text (file1, 'libreoffice-calc.desktop', 'gnumeric.desktop')
 
+package_add ('abiword gnumeric')
+package_elim ('libreoffice-calc libreoffice-writer libreoffice-base-core')
+package_elim ('libreoffice-common libreoffice-core libreoffice-style-tango')
+
+
 print "FINISHED updating Conky and ROX pinboard"
 
 package_add ('abiword gnumeric')
