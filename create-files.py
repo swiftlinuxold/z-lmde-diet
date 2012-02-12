@@ -38,7 +38,7 @@ def create_dir (dir_to_create):
 elim_dir (dir_temp)
 create_dir (dir_temp)
 
-# Adapt build-regular.sh
+# /1-build/build-regular.sh -> /temp-diet/build.sh
 file_regular = dir_build + '/build-regular.sh'
 file_diet = dir_temp + '/build.sh'
 text_regular = 'linuxmint-201109-gnome-dvd-32bit.iso'
@@ -50,6 +50,26 @@ text_regular = '$DIR_DEVELOP/remaster/main.sh'
 text_diet = '$DIR_DEVELOP/temp-diet/remaster.sh'
 change_text (file_diet, text_regular, text_diet)
 
-# file_regular = DIR_DEVELOP + '/build-regular.sh'
-# file_diet = dir_build+'/build-diet.sh'
-# copy_file (file_diet, file_regular, 'diet', 'regular')
+# /remaster/main.sh -> /temp-diet/remaster.sh
+file_regular = dir_develop + '/remaster/main.sh'
+file_diet = dir_temp + '/remaster.sh'
+text_regular = 'python $FILE2'
+
+text_diet = 'sed -i ' + chr(39)
+text_diet = text_diet + 's/regular.iso/diet.iso/g' + chr (39)
+text_diet = text_diet + ' $FILE2\n\n'
+
+text_diet = text_diet + 'sed -i ' + chr(39)
+text_diet = text_diet + 's/linuxmint-201109-gnome-dvd-32bit/regular/g' + chr(39)
+text_diet = text_diet + ' $FILE2\n\n'
+
+text_diet = text_diet + 'sed -i ' + chr(39)
+text_diet = text_diet + 's/1-build/diet/g' + chr (39)
+text_diet = text_diet + ' $FILE2\n\n'
+
+text_diet = text_diet + 'sed -i ' + chr(39)
+text_diet = text_diet + 's/shared-regular/shared/g' + chr (39)
+text_diet = text_diet + ' $FILE2\n\n'
+
+text_diet = text_diet + text_regular
+copy_file (file_regular, file_diet, text_regular, text_diet)
