@@ -46,6 +46,12 @@ text_diet = 'regular.iso'
 copy_file (file_regular, file_diet, text_regular, text_diet)
 print file_regular, file_diet, text_regular, text_diet
 
+import fileinput
+for line in fileinput.input (file_diet,inplace =1):
+    line = line.strip()
+    if not 'preinstall' in line:
+        print line 
+
 text_regular = '$DIR_DEVELOP/remaster/main.sh'
 text_diet = '$DIR_DEVELOP/temp-diet/remaster.sh'
 change_text (file_diet, text_regular, text_diet)
