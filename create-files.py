@@ -46,6 +46,7 @@ text_diet = 'regular.iso'
 copy_file (file_regular, file_diet, text_regular, text_diet)
 print file_regular, file_diet, text_regular, text_diet
 
+# Remove command to execute preinstall.sh
 import fileinput
 for line in fileinput.input (file_diet,inplace =1):
     line = line.strip()
