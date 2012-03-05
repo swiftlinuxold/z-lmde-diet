@@ -26,7 +26,7 @@ fi
 # Everything up to this point is common to the script shared-*.sh and all Bash scripts called by shared-*.sh
 #=====================================================================================================
 
-# This is the script for transforming LMDE into Regular Swift Linux.
+# This is the script for transforming Regular Swift Linux into Diet Swift Linux.
 
 # Setting up apt-get/Synaptic MUST come first, because
 # some repositories require installing packages.
