@@ -1,0 +1,30 @@
+SEQUENCE OF EVENTS:
+
+Call $DIR_DEVELOP/diet/create-files.py function
+
+	Copy dir_build + '/build-regular.sh' to dir_temp + '/build.sh'
+	
+	In dir_temp + '/build.sh': 
+	
+		'linuxmint-201109-gnome-dvd-32bit.iso' -> 'regular.iso'
+		
+		Remove line containing 'preinstall'
+		
+		'$DIR_DEVELOP/remaster/main.sh' -> '$DIR_DEVELOP/temp-diet/remaster.sh'
+		
+	Copy dir_develop + '/remaster/main.sh' to dir_temp + '/remaster.sh'
+	
+	In dir_temp + '/remaster.sh', add commands to make dir_temp + '/remaster.sh' do the following
+	in the file /usr/lib/linuxmint/mintConstructor/mintConstructor.py:
+	
+		regular.iso -> diet.iso
+		
+		linuxmint-201109-gnome-dvd-32bit -> regular
+		
+		1-build -> diet
+		
+		shared-regular -> shared
+
+Call $DIR_DEVELOP/temp-diet/build.sh function
+
+	Calls the sh $DIR_DEVELOP/remaster/main.sh function
