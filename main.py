@@ -24,8 +24,11 @@ else:
 # Everything up to this point is common to all Python scripts called by shared-*.sh
 # =================================================================================
 
-print '==============================='
-print 'BEGIN CREATING DIET SWIFT LINUX'
+def message (string):
+    os.system ('echo ' + string)
+
+message ('===============================')
+message ('BEGIN CREATING DIET SWIFT LINUX')
 
 import shutil
 
@@ -68,6 +71,8 @@ package_elim ('libreoffice-calc libreoffice-writer libreoffice-base-core')
 package_elim ('libreoffice-common libreoffice-core libreoffice-style-tango')
 
 
-print "FINISHED updating Conky and ROX pinboard"
+message ("FINISHED updating Conky and ROX pinboard")
 
 package_add ('abiword gnumeric')
+
+os.system ('python ' + dir_develop + '/final/main.py')
