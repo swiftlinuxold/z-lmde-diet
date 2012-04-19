@@ -40,11 +40,11 @@ def change_text (filename, text_old, text_new):
 
 def package_elim (name):
     os.system ('echo ELIMINATING ' + name)
-    os.system ('apt-get purge -y ' + name)
+    os.system ('apt-get purge -qq ' + name)
 
 def package_add (name):
     os.system ('echo ADDING ' + name)
-    os.system ('apt-get install -y ' + name)
+    os.system ('apt-get install -qq ' + name)
     
 # Values for Regular Swift Linux
 os.system ('python ' + dir_develop + '/1-build/cosmetic-regular.py')
