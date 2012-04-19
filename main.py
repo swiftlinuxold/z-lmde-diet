@@ -46,7 +46,10 @@ def package_add (name):
     os.system ('echo ADDING ' + name)
     os.system ('apt-get install -y ' + name)
     
-print "BEGIN updating Conky and ROX pinboard"
+# Values for Regular Swift Linux
+os.system ('python ' + dir_develop + '/1-build/cosmetic-regular.py')
+
+message ("BEGIN updating Conky and ROX pinboard")
 
 file1 = dir_user + '/.conkyrc'
 change_text (file1, 'Regular Swift Linux', 'Diet Swift Linux')
