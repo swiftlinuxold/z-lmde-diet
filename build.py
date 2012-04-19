@@ -20,8 +20,6 @@ else:
 	dir_develop='/home/' + uname + '/develop'
 
 # ======================================================================================
-abbrev = sys.argv [1]
-fullname = sys.argv [2]
 
 def elim_dir (dir_to_elim): 
 	if (os.path.exists(dir_to_elim)):
@@ -63,9 +61,7 @@ text_old = 'linuxmint-201109-gnome-dvd-32bit'
 text_new = 'regular'
 change_text (file_remaster, text_old, text_new)
 text_old = '/usr/local/bin/develop/1-build/shared-regular.py'
-text_new = '/usr/local/bin/develop/diet/main.py '
-text_new = text_new + chr(34) + abbrev + chr(34) + ' '
-text_new = text_new + chr(34) + fullname + chr(34)
+text_new = '/usr/local/bin/develop/diet/main.py'
 change_text (file_remaster, text_old, text_new)
 
 # Execute the remastering script
