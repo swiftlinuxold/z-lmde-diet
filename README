@@ -1,3 +1,11 @@
 This is the repository for creating Diet Swift Linux.  Diet Swift Linux is Regular Swift Linux without LibreOffice.  The much lighter AbiWord word processor and Gnumeric spreadsheet program are the replacements.
 
 Diet Swift Linux is for Linux users who consider OpenOffice/LibreOffice to be bloatware.
+
+PREREQUISITE: You are in your VirtualBox installation of LMDE and have downloaded all of the 
+repositories you need through the ~/develop/1-build/preinstall.sh script.
+
+The steps to create Diet Swift Linux on the desktop are:
+1.  If you haven't already done so, enter the command "sudo sh ~/develop/1-build/desktop-regular.sh".  
+(This transforms LMDE into Regular Swift Linux on your desktop setup.)
+2.  Enter the command "sudo python ~/develop/diet/main.py"
